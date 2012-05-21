@@ -1,0 +1,182 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>W3 Scilab - National Resource Centre for Free Open Source Software</title>
+<style type="text/css">
+body {background: #EED;font-family: sans-serif,Georgia, Times, "Times New Roman", serif; }
+table {background: #CCCCCC;}
+a:hover {color:green }
+a {text-decoration:none}
+</style>
+<link rel="stylesheet" href="dhtmlwindow.css" type="text/css">
+<script type="text/javascript" src="dhtmlwindow.js"></script></head><body><div id="dhtmlwindowholder"><span style="display: none;">.</span><div style="z-index: 100; width: 650px; visibility: visible; display: none; left: 177px; top: 79px;" class="dhtmlwindow" id="helpbox"><div class="drag-handle">Scilab On-line Help<div class="drag-controls"><img src="min.gif" title="Minimize"><img src="close.gif" title="Close"></div></div><div style="overflow: hidden; height: 350px; display: block;" class="drag-contentarea"><iframe src="" style="margin: 0pt; padding: 0pt; width: 100%; height: 100%;" name="_iframe-helpbox"></iframe></div><div style="display: block;" class="drag-statusarea"><div class="drag-resizearea" style="background: transparent url(resize.gif) no-repeat scroll right top; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">&nbsp;</div></div></div></div>
+<script type="text/javascript" src="scilab.js"></script>
+<script type="text/javascript">
+var helpwin=dhtmlwindow.open("helpbox", "iframe", "docindex.html", "Scilab On-line Help", "width=650px,height=350px,resize=1,scrolling=1,center=1", "recal")
+helpwin.hide();
+helpwin.onclose=function(){
+		return window.confirm("Close help window ?")
+	}
+</script>
+
+<center>
+<div id="gwindow" style="border: 2px outset lightgray; width: 616px; height: 437px; position: absolute; background-color: rgb(204, 204, 204); left: 30%; top: 5%; visibility: hidden;">
+<div style="width: 100%; height: 22px; background-color: rgb(204, 204, 204);" align="right"><img id="gmaxbutton" style="cursor: pointer; top: 4px; position: relative;" src="min.gif" onclick="maxminimize()" title="Minimize"><img src="close.gif" style="cursor: pointer; top: 4px; position: relative;" onclick="closeit()" title="Close"></div>
+<div id="gcontent" style="overflow: auto; width: 596px; height: 397px;">
+<img id="gconsole" src="scilabp.png" style="border: 2px inset rgb(204, 204, 204); width: 596px; height: 397px;">
+</div>
+</div>
+<div id="message" class="drag" style="border: 2px ridge black; background: white none repeat scroll 0% 0%; overflow: auto; position: absolute; top: 0.2%; right: 0.2%; margin-left: -100px; font-size: 12px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; width: 150px; height: 35px; visibility: hidden;">
+</div>
+<div style="width: 100%; color: black; font-size: 13px;" align="left"><img src="perlpower.gif" align="right"><font size="11">W3 Scilab     </font>- <img src="scilab01.gif"> on Web<br>National Resource Center for Free/Open Source Software, India </div><br>
+<form name="sciForm" action="javascript:void%200">
+<table style="border: 2px groove white; font-size: 12px;" width="100%" bgcolor="#cccccc" border="1" bordercolor="#666666">
+<tbody>
+<tr><td>Select an example code:<br>
+<select size="1" name="demo" onchange="putDemo()">
+<option selected="selected" value="0">Select an example code</option>
+<option value="1">Mesh</option>
+<option value="2">Grid</option>
+<option value="3">Milk Drop</option>
+<option value="4">plot3d1</option>
+<option value="5">contour2d</option>
+<option value="6">subplot</option>
+<option value="7">fgrayplot</option>
+<option value="8">3D Surface</option>
+<option value="9">fplot3d</option>
+<option value="10">fchamp</option>
+<option value="11">Evans root locus</option>
+<option value="12">Polar Plot</option>
+<option value="13">Hist3d</option>
+<option value="14">Matplot</option>
+<option value="15">Bar</option>
+<option value="16">Nichols chart</option>
+<option value="17">Bode Plot</option>
+<option value="18">2D Vector field Plot</option>
+<option value="19">Colorbar</option>
+<option value="20">Level curves on a 3D surface</option>
+<option value="21">Pseudo-color plot of a triangular mesh</option>
+<option value="22">Gain plot</option>
+<option value="23">Shell</option>
+<option value="24">Hole3d</option>
+<option value="25">Torus</option>
+<option value="26">Moebius</option>
+<option value="27">Plot2d1</option>
+<option value="28">Histplot</option>
+<option value="29">Param3d</option>
+<option value="30">Drawing surfaces defined by facets</option>
+<option value="31">Response of Chebyshev type 1 filter</option>
+<option value="32">Detrend</option>
+<option value="33">Bessel function</option>
+<option value="34">One dimension Interpolation</option>
+<option value="35">Square wave with period  2*%pi</option>
+<option value="36">Colorbar 2</option>
+<option value="37">Contour2di</option>
+<option value="38">Bezier Surface Test</option>
+<option value="39">Mesh of amdba type</option>
+<option value="40">2D curve Bezier test </option>
+<option value="41">Gammatest</option>
+<option value="42">3D Surface defined by a function</option>
+<option value="43">Finite Element Display 1</option>
+<option value="44">Complex exp function on D(0,R=2)</option>
+<option value="45">Complex log function on D(0,R=4)</option>
+<option value="46">Complex atanh function on [-2,2] x [-2,2]</option>
+<option value="47">Simulation of Poison Random variable</option>
+<option value="48">Simulation of Weibull Random variable</option>
+<option value="49">2D plots superposition </option>
+<option value="50">2D plot with implicit abscissae values</option>
+<option value="51">errbar</option>
+<option value="52">Using fec to smooth a grayplot </option>
+<option value="53">Sphere</option>
+<option value="54">Spiral</option>
+<option value="55">Tube</option>
+<option value="56">Black Hole</option>
+<option value="57">Riemann surface (n=2) </option>
+<option value="58">Surf</option>
+<option value="59">Mesh of rectangular facets</option>
+<option value="60">Nyquist Plot</option>
+<option value="61">fplot3d1</option>
+<option value="62">hotcolormap</option>
+<option value="63">hsvcolormap</option>
+<option value="64">abaque</option>
+<option value="65">2D plot with grid</option>
+<option value="66">fchamp</option>
+<option value="67">champ</option>
+<option value="68">contour</option>
+<option value="69">Rings</option>
+<option value="70">Surface with holes</option>
+<option value="71">Sfgrayplot Demo</option>
+<option value="72">Finite Element Display 2</option>
+<option value="73">fec with Velocity Field</option>
+<option value="74">Step response</option>
+<option value="75">Impulse response</option>
+<option value="76">Vector field plot</option>
+<option value="77">Vertical bar plot</option>
+<option value="78">Sub-windows</option>
+<option value="79">Fast Fourier Transform</option>
+<option value="80">FFT Shift</option>
+<option value="81">Surf 2</option>
+<option value="82">Data fit Example</option>
+<option value="83">Parametric plot</option>
+<option value="84">Surface plot in R3</option>
+<option value="85">Minimax approximation of FIR filter</option>
+<option value="86">Pie Chart</option>
+<option value="87">Surface plot with lighting</option>
+<option value="88">3D isosurface of constant value</option>
+<option value="89">Polarmap</option>
+<option value="90">Matrix on grid using bilinear interpolation</option>
+<option value="91">Matplot 1</option>
+<option value="92">Matplot of current colormap</option>
+<option value="93">Group barhomogenize</option>
+<option value="94">Stacked barhomogenize</option>
+<option value="95">ex1: creation of 1 yellow bar and 3 bars</option>
+<option value="96">ex2: creation of 1 bar and 2 polylines</option>
+<option value="97">Butterworth filter</option>
+<option value="98">Magnitude response-continuous-time system </option>
+<option value="99">Cepstrum calculation</option>
+<option value="100">Stop band filter</option>
+<option value="101">Minimax FIR filter</option>
+<option value="102">Stem Plot</option>
+<option value="103">Barhomogenize 1</option>
+<option value="104">Barhomogenize 2</option>
+<option value="105">Exponential random sample histogram</option>
+<option value="106">pole-zero plot </option>
+<option value="107">eval3dp</option>
+<option value="108">MESH creation and visualisation 1</option>
+<option value="109">MESH creation and visualisation 2</option>
+<option value="110">Spectral Estimation </option>
+<option value="111">IIR filter design</option>
+<option value="112">Evans</option>
+<option value="113">Plotframe</option>
+<option value="114">xfpolys</option>
+<option value="115">Colored Matrix</option>
+<option value="116">Colored Histogram</option>
+<option value="117">plot3d and use of xgeom</option>
+<option value="118">Spaghetti</option>
+<option value="119">Frequency response fit</option>
+<option value="120">iir digital filter</option>
+<option value="121">Hilbert transform </option>
+<option value="122">Sub-windows</option>
+<option value="123">Example with 2 facets</option>
+<option value="124">Spyglass like Slices</option>
+<option value="125">Rebins a matrix on a new grid using bilinear interpolation</option>
+
+</select>
+<br><br>
+<span>(or) Type your Scilab code below : </span><br>
+<textarea wrap="off" style="margin: 5px; font-size: 15px; height: 150px; width: 400px; color: green; background-color: white;" rows="8" cols="35" id="scicode" name="scicode"></textarea><br>
+<input style="cursor: pointer;" value="1" name="graphicsmode" type="checkbox">  Graphical Output   <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="execute" style="cursor: pointer;" border="1" title="Run Code" onclick="executeCode()">Execute</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="clear" border="1" style="cursor: pointer;" title="Clear All" onclick="clearForm()">&nbsp;Clear&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="clear" border="1" style="cursor: pointer;" title="Print Graphics output" onclick="printImg()">&nbsp;Print&nbsp;</button><br><br>
+
+</td>
+<td align="left"><input style="border: 1px outset lightgray;" src="help.gif" title="Click for online help" onclick="showHelp()" type="image" align="right">
+<span> Console output:</span><br>
+<textarea style="border: 2px inset gray; margin: 10px; overflow: auto; height: 200px; width: 500px; font-size: 15px; background-color: rgb(17, 17, 17); color: rgb(51, 208, 17);" wrap="off" rows="8" cols="15" id="sciresult" name="sciresult"></textarea>
+</td>
+</tr>
+</tbody>
+</table>
+</form></center>
+<iframe src="" name="iFrame1" id="iFrame1" style="display: none;"></iframe>
+<br>
+
+</body></html>

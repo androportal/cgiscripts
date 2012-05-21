@@ -1,0 +1,2 @@
+print 'Hello from Python!'
+savefig('/var/www/html/scilab/tmp/31306666-3030-3662-2d35-3030612d3465.png')

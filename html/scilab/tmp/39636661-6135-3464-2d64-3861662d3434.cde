@@ -1,0 +1,3 @@
+for each in range(1,100):
+    print 'The number is' each
+savefig('/var/www/html/scilab/tmp/39636661-6135-3464-2d64-3861662d3434.png')

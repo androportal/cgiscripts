@@ -10,8 +10,8 @@ my $uuid=$ug->create_str();
 my $file=$ug->to_string($uuid);
 my $incode=$request->param('code');
 
-my $codefile="/var/www/html/scilab/tmp/$file.cpp";
-my $errorfile="/var/www/html/scilab/tmp/$file.err";
+my $codefile="/var/www/html/cpp/tmp/$file.cpp";
+my $errorfile="/var/www/html/cpp/tmp/$file.err";
 my $binary="bin";
 my $results;
 noguimode();
