@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-#use strict;
+#This can be used with pylab module too, for graphical output
 use CGI;
 use CGI::Carp 'fatalsToBrowser';
 use Data::UUID;

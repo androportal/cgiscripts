@@ -9,21 +9,10 @@ my $ug = Data::UUID->new;
 my $uuid=$ug->create_str();
 my $file=$ug->to_string($uuid);
 my $incode=$request->param('code');
-if ($incode =~ m/unix_w|unix_g|unix_s|unix_x|unix|host|dir/){
-	$error="Shell Command (sh) execution disabled";
-	$results->{"output"}="";
-	$results->{"image"}=0;
-	$results->{"imagefile"}="";
-	$results->{"error"}=$error;
-	my $json=objToJson($results);
-        print "Content-type: text/html\n\n";
-	print $json;
-	exit;
-}
-my $graphicsmode=$request->param('graphicsmode');
+
 my $codefile="/var/www/html/scilab/tmp/$file.cpp";
 my $errorfile="/var/www/html/scilab/tmp/$file.err";
-my $imagepath="/var/www/html/scilab/tmp/$file.png";
+my $binary="bin";
 my $results;
 noguimode();
 sub noguimode{
@@ -32,26 +21,16 @@ sub noguimode{
 	close CODE;
 	print "Content-type: text/html\n\n";
 	my $path=$ENV{'PATH'};
-	$ENV{'PATH'}=$path.":/usr/lib/scilab-4.1.1/bin/";
 	$< = 0;
-	$ENV{'TMPDIR'}="var/www/html/scilab";
-	$ENV{'SCIDIR'}="/usr/lib/scilab-4.1.1";
-	$ENV{'HOME'}="/var/www/html/scilab";
+	$ENV{'HOME'}="/var/www/html/cpp";
 	$ENV{'DISPLAY'}=":0.0";
-	$ENV{'LD_LIBRARY_PATH'}=$ENV{'SCI'}."/bin:".$ENV{'SCI'}."/libs";
-	$ENV{'LD_LIBRARY_PATH'}=$ENV{'LD_LIBRARY_PATH'}.":/usr/lib/scilab-4.1.1/bin:/usr/lib/scilab-4.1.1/lib/scilab";
-	$ENV{'SHLIB_PATH'}=$ENV{'SHLIB_PATH'}.":/usr/lib/scilab-4.1.1/bin:/usr/lib/scilab-4.1.1/lib/scilab";
-	$ENV{'TCL_LIBRARY'}=$ENV{'SCI'}."/tcl/tcl8.4";
-	$ENV{'TK_LIBRARY'}=$ENV{'SCI'}."/tcl/tk8.4";
-	my $cmd="g++ $codefile 2>&1";
-############# expt #######################
+	my $cmd="g++ $codefile -o bin 2>&1";
 
 	open (CMD,"$cmd|");
 	my @data1=<CMD>;
 	close CMD;
 
-############### expt end ####################
-	my $cmd="./a.out";
+	my $cmd="./bin";
 	open (CMD,"$cmd|");
 	my @data2=<CMD>;
 	close CMD;
@@ -65,8 +44,8 @@ sub noguimode{
 	my $output=join("",@data1," ",@data2);
 	$output =~ s/exit\(\);//g;
 	$output =~ s/-->catch//g;
-	#unlink $codefile;
-	unlink $errorfile;
+	unlink $codefile;
+	unlink $binary;
 	$results->{"output"}=$output;
 	$results->{"image"}=0;
 	$results->{"imagefile"}="";
