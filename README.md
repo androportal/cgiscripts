@@ -15,7 +15,7 @@ Run `apache` now and enable `Xvfb` for plots etc.
 Required packages
 -----------------
 
- * libdata-uuid-libuuid-perl libossp-uuid-perl libjson-perl tk8.4 libgfortran3 libuuid-perl uuid-runtime apache2 Xvb 
+ * libdata-uuid-libuuid-perl libossp-uuid-perl libjson-perl tk8.4 libgfortran3 libuuid-perl uuid-runtime apache2 Xvfb 
 
 
 License
