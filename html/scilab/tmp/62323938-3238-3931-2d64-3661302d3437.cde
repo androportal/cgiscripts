@@ -1,4 +1,0 @@
-from pylab import linspace,pi,plot,sin,savefig
-x=linspace(-pi,pi,100)
-plot(x,sin(x))
-savefig('/var/www/html/scilab/tmp/62323938-3238-3931-2d64-3661302d3437.png')

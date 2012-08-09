@@ -1,4 +1,0 @@
-service apache2 stop
-killall scilabserver.cg scilex scilab-bin
-echo "set to test"
-ps -e |grep sci
