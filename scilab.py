@@ -8,7 +8,7 @@ from sys import exit
 from subprocess import Popen
 from functions import *
 
-checkScript = "pgrep scilab.py|wc -l"
+checkScript = "ps -eo pid,args | grep scilab.py | grep -v grep|wc -l"
 returnVal = Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n')
 if int(returnVal) > 1:
 #    system("killall scilab.py")

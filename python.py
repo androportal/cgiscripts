@@ -9,7 +9,7 @@ from subprocess import Popen, PIPE
 from functions import *
 
 
-checkScript = "pgrep python.py|wc -l"
+checkScript = "ps -eo pid,args | grep python.py | grep -v grep|wc -l"
 returnVal = Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n')
 if int(returnVal) > 1:
 #    system("killall python.py")
