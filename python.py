@@ -9,11 +9,11 @@ from subprocess import Popen, PIPE
 from functions import *
 
 
-checkScript = "ps -eo pid,args | grep python.py | grep -v grep|wc -l"
-returnVal = Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n')
-if int(returnVal) > 1:
+#checkScript = "ps -eo pid,args | grep python.py | grep -v grep|wc -l"
+#returnVal = Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n')
+#if int(returnVal) > 1:
 #    system("killall python.py")
-    exit()
+#    exit()
 
 sourceFile = '/tmp/1.py'
 saveSourceFile = '/tmp/savePy.py'

@@ -8,11 +8,11 @@ from sys import exit
 from subprocess import Popen, PIPE
 from functions import *
 
-checkScript = "ps -eo pid,args | grep cpp.py | grep -v grep|wc -l"
-returnVal = Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n')
-if int(returnVal) > 1:
+#checkScript = "ps -eo pid,args | grep cpp.py | grep -v grep|wc -l"
+#returnVal = Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n')
+#if int(returnVal) > 1:
 #    system("killall cpp.py")
-    exit()
+#    exit()
 
 
 sourceFile = '/tmp/1.cpp'
