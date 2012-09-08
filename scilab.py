@@ -8,11 +8,11 @@ from sys import exit
 from subprocess import Popen
 from functions import *
 
-checkScript = "ps -eo pid,args | grep scilab.py | grep -v grep|wc -l"
-returnVal = Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n')
-if int(returnVal) > 1:
+#checkScript = "ps -eo pid,args | grep scilab.py | grep -v grep|wc -l"
+#returnVal = Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n')
+#if int(returnVal) > 1:
 #    system("killall scilab.py")
-    exit()
+#    exit()
 
 sourceFile     = '/var/www/html/scilab/tmp/1.cde'
 sourceFilePlot = '/var/www/html/scilab/tmp/plot.cde'

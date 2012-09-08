@@ -75,12 +75,8 @@ def returnCommand():
             elif(checkPath == allPaths[4]):
                 command = commonCommand + "'python %s'" %(checkPath)
                 break
-            #elif((checkPath == allPaths[6]) and path.getsize(checkPath)):
             elif((checkPath == allPaths[6]) and path.getsize(checkPath)):
-	        if(int(Popen(checkScript,shell=True, stdout=PIPE).stdout.read().strip('\n'))>1):
-		    pass
-                else:
-		    command = commonCommand + "'scilab -nogui -nb -f %s'" %(checkPath)
+		command = commonCommand + "'scilab -nogui -nb -f %s'" %(checkPath)
                 break
         else:
             command = ''
