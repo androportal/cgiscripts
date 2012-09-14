@@ -55,7 +55,7 @@ elif int(graphicsmode) is 1:
     else:
         killnRemoveExcept('scilab.py')
         writeGUIcode(str(code),sourceFilePlot)
-        system("scilab -nb -f %s" %(sourceFilePlot))
+        system("/usr/lib/scilab-4.1.1/bin/scilab -nb -f %s" %(sourceFilePlot))
         system("touch /var/www/html/flag")
 
 #####################################################################
